@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<chart id="8">
+  <P Name="name">MATLAB Function</P>
+  <P Name="windowPosition">[422 539.941 189 413]</P>
+  <P Name="viewLimits">[0 156.75 0 153.75]</P>
+  <P Name="screen">[1 1 3600 1200 1.180555555555556]</P>
+  <P Name="viewObj">8</P>
+  <P Name="visible">1</P>
+  <subviewS/>
+  <P Name="ssIdHighWaterMark">6</P>
+  <P Name="decomposition">CLUSTER_CHART</P>
+  <P Name="type">EML_CHART</P>
+  <P Name="chartFileNumber">2</P>
+  <P Name="disableImplicitCasting">1</P>
+  <eml>
+    <P Name="name">mppt_po</P>
+  </eml>
+  <Children>
+    <state SSID="1">
+      <P Name="labelString">eML_blk_kernel()</P>
+      <P Name="position">[18 64.5 118 66]</P>
+      <P Name="fontSize">12</P>
+      <P Name="superState">SUBCHART</P>
+      <P Name="subviewer">8</P>
+      <P Name="type">FUNC_STATE</P>
+      <P Name="decomposition">CLUSTER_STATE</P>
+      <eml>
+        <P Name="isEML">1</P>
+        <P Name="script">function D = mppt_po(Vpv, Ipv)
+    % 1. Persistent variables to store historical values between time-steps
+    persistent P_old V_old D_old;
+    
+    % 2. Protect against flipped sensor polarities by forcing absolute values
+    Vpv = abs(Vpv);
+    Ipv = abs(Ipv);
+    
+    % 3. Safe initialization on the very first simulation step
+    if isempty(P_old)
+        P_old = 0;
+        V_old = 0;
+        D_old = 0.45; % Start in the middle
+    end
+    
+    % 4. Calculate current power
+    P_new = Vpv * Ipv;
+    
+    % 5. Calculate the changes (deltas)
+    delta_P = P_new - P_old;
+    delta_V = Vpv - V_old;
+    
+    % 6. Tracking step size (0.002 keeps it stable)
+    step = 0.002; 
+    
+    % 7. SWAPPED P&amp;O SIGN LOGIC (Forces the duty cycle to climb correctly)
+    if delta_P &gt; 0
+        if delta_V &gt; 0
+            D = D_old + step; % Power up, Voltage up -&gt; Increase D
+        else
+            D = D_old - step; % Power up, Voltage down -&gt; Decrease D
+        end
+    else
+        if delta_V &gt; 0
+            D = D_old - step; % Power down, Voltage up -&gt; Decrease D
+        else
+            D = D_old + step; % Power down, Voltage down -&gt; Increase D
+        end
+    end
+    
+    % 8. Boundary Protection: Keep D locked in a healthy operational window
+    if D &gt; 0.85
+        D = 0.85; 
+    elseif D &lt; 0.15
+        D = 0.15; 
+    end
+    
+    % 9. Update history tracking variables for the next time-step execution
+    P_old = P_new;
+    V_old = Vpv;
+    D_old = D;
+end</P>
+      </eml>
+    </state>
+    <data SSID="4" name="Vpv">
+      <P Name="scope">INPUT_DATA</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+        </type>
+        <P Name="complexity">SF_COMPLEX_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="5" name="D">
+      <P Name="scope">OUTPUT_DATA</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+        </type>
+        <P Name="complexity">SF_COMPLEX_INHERITED</P>
+        <P Name="frame">SF_FRAME_NO</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="6" name="Ipv">
+      <P Name="scope">INPUT_DATA</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="complexity">SF_COMPLEX_INHERITED</P>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <transition SSID="2">
+      <P Name="labelString">{eML_blk_kernel();}</P>
+      <P Name="labelPosition">[28.125 13.875 102.544 14.964]</P>
+      <P Name="fontSize">12</P>
+      <src>
+        <P Name="intersection">[0 0 1 0 23.5747 14.625 0 0]</P>
+      </src>
+      <dst>
+        <P Name="SSID">3</P>
+        <P Name="intersection">[1 0 -1 0 23.5747 42.5747 0 0]</P>
+      </dst>
+      <P Name="midPoint">[23.5747 24.9468]</P>
+      <P Name="dataLimits">[21.175 25.975 14.625 42.575]</P>
+      <P Name="subviewer">8</P>
+      <P Name="drawStyle">SMART</P>
+      <slide>
+        <P Name="sticky">BOTH_STICK</P>
+      </slide>
+      <P Name="executionOrder">1</P>
+    </transition>
+    <junction SSID="3">
+      <P Name="position">[23.5747 49.5747 7]</P>
+      <P Name="subviewer">8</P>
+      <P Name="type">CONNECTIVE_JUNCTION</P>
+    </junction>
+  </Children>
+</chart>
