@@ -1,0 +1,147 @@
+{
+    "GraphicalInterface":{
+        "ExternalFileReferences":[
+            {
+                "Path":"$bdroot\/C1",
+                "Reference":"spsSeriesRLCBranchLib\/Series RLC Branch",
+                "SID":"9",
+                "Type":"LIBRARY_BLOCK"
+            },
+            {
+                "Path":"$bdroot\/C2",
+                "Reference":"spsSeriesRLCBranchLib\/Series RLC Branch",
+                "SID":"11",
+                "Type":"LIBRARY_BLOCK"
+            },
+            {
+                "Path":"$bdroot\/C3",
+                "Reference":"spsSeriesRLCBranchLib\/Series RLC Branch",
+                "SID":"12",
+                "Type":"LIBRARY_BLOCK"
+            },
+            {
+                "Path":"$bdroot\/C4",
+                "Reference":"spsSeriesRLCBranchLib\/Series RLC Branch",
+                "SID":"13",
+                "Type":"LIBRARY_BLOCK"
+            },
+            {
+                "Path":"$bdroot\/C5",
+                "Reference":"spsSeriesRLCBranchLib\/Series RLC Branch",
+                "SID":"14",
+                "Type":"LIBRARY_BLOCK"
+            },
+            {
+                "Path":"$bdroot\/Current Measurement",
+                "Reference":"spsCurrentMeasurementLib\/Current Measurement",
+                "SID":"37",
+                "Type":"LIBRARY_BLOCK"
+            },
+            {
+                "Path":"$bdroot\/D1",
+                "Reference":"spsDiodeLib\/Diode",
+                "SID":"6",
+                "Type":"LIBRARY_BLOCK"
+            },
+            {
+                "Path":"$bdroot\/D2",
+                "Reference":"spsDiodeLib\/Diode",
+                "SID":"15",
+                "Type":"LIBRARY_BLOCK"
+            },
+            {
+                "Path":"$bdroot\/D3",
+                "Reference":"spsDiodeLib\/Diode",
+                "SID":"16",
+                "Type":"LIBRARY_BLOCK"
+            },
+            {
+                "Path":"$bdroot\/D4",
+                "Reference":"spsDiodeLib\/Diode",
+                "SID":"17",
+                "Type":"LIBRARY_BLOCK"
+            },
+            {
+                "Path":"$bdroot\/D5",
+                "Reference":"spsDiodeLib\/Diode",
+                "SID":"18",
+                "Type":"LIBRARY_BLOCK"
+            },
+            {
+                "Path":"$bdroot\/D6",
+                "Reference":"spsDiodeLib\/Diode",
+                "SID":"19",
+                "Type":"LIBRARY_BLOCK"
+            },
+            {
+                "Path":"$bdroot\/Mosfet",
+                "Reference":"spsMosfetLib\/Mosfet",
+                "SID":"4",
+                "Type":"LIBRARY_BLOCK"
+            },
+            {
+                "Path":"$bdroot\/Mutual Inductance",
+                "Reference":"spsMutualInductanceLib\/Mutual Inductance",
+                "SID":"29",
+                "Type":"LIBRARY_BLOCK"
+            },
+            {
+                "Path":"$bdroot\/PV Array",
+                "Reference":"spsPVArrayLib\/PV Array",
+                "SID":"33",
+                "Type":"LIBRARY_BLOCK"
+            },
+            {
+                "Path":"$bdroot\/PWM Generator (DC-DC)",
+                "Reference":"spsPWMGeneratorDCDCLib\/PWM Generator\n(DC-DC)",
+                "SID":"38",
+                "Type":"LIBRARY_BLOCK"
+            },
+            {
+                "Path":"$bdroot\/R",
+                "Reference":"spsSeriesRLCBranchLib\/Series RLC Branch",
+                "SID":"7",
+                "Type":"LIBRARY_BLOCK"
+            },
+            {
+                "Path":"$bdroot\/R1",
+                "Reference":"spsSeriesRLCBranchLib\/Series RLC Branch",
+                "SID":"30",
+                "Type":"LIBRARY_BLOCK"
+            },
+            {
+                "Path":"$bdroot\/Series RLC Branch",
+                "Reference":"spsSeriesRLCBranchLib\/Series RLC Branch",
+                "SID":"32",
+                "Type":"LIBRARY_BLOCK"
+            },
+            {
+                "Path":"$bdroot\/Series RLC Branch1",
+                "Reference":"spsSeriesRLCBranchLib\/Series RLC Branch",
+                "SID":"45",
+                "Type":"LIBRARY_BLOCK"
+            },
+            {
+                "Path":"$bdroot\/Voltage Measurement",
+                "Reference":"spsVoltageMeasurementLib\/Voltage Measurement",
+                "SID":"20",
+                "Type":"LIBRARY_BLOCK"
+            },
+            {
+                "Path":"$bdroot\/Voltage Measurement1",
+                "Reference":"spsVoltageMeasurementLib\/Voltage Measurement",
+                "SID":"36",
+                "Type":"LIBRARY_BLOCK"
+            },
+            {
+                "Path":"$bdroot\/powergui",
+                "Reference":"sps_lib\/powergui",
+                "SID":"1",
+                "Type":"LIBRARY_BLOCK"
+            }
+        ],
+        "PreCompExecutionDomainType":"Unset",
+        "SimulinkSubDomainType":"Simulink",
+        "SolverName":"ode23tb"
+    }
+}
